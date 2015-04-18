@@ -1,0 +1,37 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+char str3[100][81];
+char str4[100][81];
+int hold = 0;
+int adv = 0;
+int adv2 = 0;
+int start = 0;
+int i3 = 0;
+
+void reverseWords(FILE* input)
+{
+	while ( fgets( str3[i3], 81, input) != NULL )
+	{
+		i3++;
+	}
+
+while( start < i3 ){
+if( str3[start][adv] == '\0' ){start++; adv = 0; hold = 0; printf("\n");}
+else if( isspace( str3[start][adv] ) )
+{
+	adv2 = adv;
+	while(adv > (hold-1)){
+	if (str3[start][adv] != '\n') {
+		printf("%c", str3[start][adv]); 
+	}
+	adv--;
+	}
+	
+	adv = adv2;
+	hold = adv;
+adv++;
+}
+else{adv++;}}
+}
