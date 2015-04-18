@@ -1,0 +1,21 @@
+This program is meant to perform simple reversing operations and output the result in stdout.
+
+The types of operations this can perform are:
+
+-a: Reverses the sequence of lines in a file.
+-b: Reverses the sequence of characers in each line of text.
+-c: Reverses the sequence of words in each line of txt.
+
+To get results, you must pass the name of the name of the file and the type of result you would like, as arguments. That is, a line requesting output in the terminal from a file called 123.txt would look like:
+ ' ./reverse 123.txt -a '
+which would return 123.txt with the sequences of lines reversed.
+
+Only one operation may be performed at a time.
+
+
+How they work:
+-a: Loads a 2d char array from a file and reads from the strings from the bottom line all the way back up to the top, printing each line.
+
+-b: Loads a 2d char array from a file and reads from the last character all the way up to the first, printing each character along the way.
+
+-c: Loads a 2d char array from a file and reads from the beginning up until the first ' ' character. After the space is found, everything up until the space is printed out and the program continues until there is no more input, resulting in flipped words in the same position.
