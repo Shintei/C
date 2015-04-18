@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+int main( int argc, char* argv[] )
+{
+	
+int num;
+
+FILE *fp = fopen( argv[1], "r" );
+
+	if ( fp == 0 )
+	{
+		printf("Please select a valid file\n");
+		return -1;
+	}
+	else 
+	{
+		for( num = 2; num < argc; num++ )
+		{
+			if ( strstr( argv[num], "-a" ) != NULL )
+			{
+				reverseLines( fp );	
+			}
+			if ( strstr( argv[num], "-b" ) != NULL )
+			{
+				reverseChars( fp );	
+			}
+			if ( strstr( argv[num], "-c" ) != NULL )
+			{
+				reverseWords( fp );	
+			}
+else {}
+		}
+	}
+fclose(fp);
+return 0;
